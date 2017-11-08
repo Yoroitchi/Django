@@ -15,7 +15,8 @@
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4x">
       <div class="article">
     	   <h3>{{ article.titre }}</h3>
-    	    <p>{{ article.contenu|truncatewords_html:80 }}</p>
+    	    <p>{{ article.ingredients|truncatewords_html:10 }}</p>
+          <p>{{ article.preparation|truncatewords_html:50}}</p>
           <p><a href="{% url 'lire' id=article.id slug=article.slug %}">Lire la suite</a>
       </div>
     </div>
