@@ -1,14 +1,29 @@
-{% extends "base.html"%}
+{% extends "blog/base.html"%}
+
+{% block css%}<link href="/static/bootstrap/css/3-col.css" rel="stylesheet">{% endblock %}
+
 {% block title %}Accueil{% endblock %}
-<h1>Bienvenue sur le blog des crêpes bretonnes !</h1>
+
+{% block header %}<h1>Bienvenue sur le blog des crêpes bretonnes !</h1>{% endblock %}
+
 {% block content %}
-{% for article in derniers_articles %}
-    <div class="article">
-    	<h3>{{ article.titre }}</h3>
-    	<p>{{ article.contenu|truncatewords_html:80 }}</p>
-        <p><a href="{% url 'lire' id=article.id slug=article.slug %}">Lire la suite</a>
+
+<div class="container">
+
+  <div class="row">
+    {% for article in derniers_articles %}
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4x">
+      <div class="article">
+    	   <h3>{{ article.titre }}</h3>
+    	    <p>{{ article.contenu|truncatewords_html:80 }}</p>
+          <p><a href="{% url 'lire' id=article.id slug=article.slug %}">Lire la suite</a>
+      </div>
     </div>
-{% empty %}
-    <p>Aucun article.</p>
-{% endfor %}
+    {% empty %}
+        <p>Aucun article.</p>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}
+
+{% block navbar %}Des Crêpes !{% endblock %}
