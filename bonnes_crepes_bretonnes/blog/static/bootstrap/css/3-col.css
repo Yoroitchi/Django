@@ -1,0 +1,30 @@
+header {
+  margin-left: 54px;
+}
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
+
+.infos{
+  margin-left: 5%;
+}
+
+footer {
+  margin-top: 30px;
+  margin-left: 40%;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  {% block css %}{% endblock %}
+   <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+<header>{% block header %}{% endblock %}</header>
+
+      <section id="content">
+       {% block content %}{% endblock %}
+      </section>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'accueil' %}">{% block navbar %}Des Crêpes !{% endblock %}</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'accueil' %}">Accueil</a></li>
+        <li><a href="{% url 'sarrasin' %}">Galettes de sarrasin</a></li>
+        <li><a href="{% url 'sucree' %}">Crêpes sucrées</a></li>
+        <li><a href="{% url 'addarticle' %}">Ajouter une recette</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<footer>&copy; Crêpes bretonnes by R1 modafucka</footer>
+</body>
+</html>

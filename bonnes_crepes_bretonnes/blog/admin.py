@@ -1,15 +1,14 @@
 from django.contrib import admin
-from .models import Categorie, Article
+from .models import Categorie,Article
 from django.utils.text import Truncator
 
 class ArticleAdmin(admin.ModelAdmin):
-    fields = ('titre', 'slug', 'auteur', 'categorie', 'ingredients','preparation')
+    fields = ('titre', 'auteur', 'categorie', 'ingredients','preparation')
     list_display   = ('titre','categorie', 'auteur', 'date', 'apercu_ingredient', 'apercu_preparation')
     list_filter    = ('auteur','categorie',)
     date_hierarchy = 'date'
     ordering       = ('date', )
     search_fields  = ('titre', 'auteur')
-    prepopulated_fields = {'slug': ('titre', ), }
 
     def apercu_ingredient(self, article):
         return Truncator(article.ingredients).chars(40, truncate='...')
