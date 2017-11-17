@@ -11,20 +11,19 @@
 <div class="container">
   <div class="row">
     {% for article in derniers_articles %}
-    <div class="col-xs-2 col-sm-2 col-md-4 col-lg-4">
+    <div class="col-md-4">
       <div class="portfolio-item">
-    	   <h3>{{ article.titre }}</h3>
-          <p><img src="/static/DSC_0005-1.jpg" alt="une photo de terrasse"/></p> <!--TODO : trouver la bone dimension de photo pour qu'elles ne se touchent pas d'un article à un autre-->
+        <div class="titre-article">
+    	   {{ article.titre }}
+        </div>
     	    <p>{{ article.ingredients|truncatewords_html:10 }}</p>
-          <p>{{ article.preparation|truncatewords_html:50}}</p>
+          <p>{{ article.preparation|truncatewords_html:30}}</p>
           <p><a href="{% url 'lire' id=article.id %}">Lire la suite</a>
       </div>
     </div>
     {% empty %}
         <p>Aucun article.</p>
     {% endfor %}
-    </div>
+  </div>
 </div>
 {% endblock %}
-
-{% block navbar %}Des Crêpes !{% endblock %}

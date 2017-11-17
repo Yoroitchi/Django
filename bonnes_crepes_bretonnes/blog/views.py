@@ -54,6 +54,7 @@ def add(request):
     form = ArticleForm(request.POST or None)
     if form.is_valid():
         form.save()
+        return redirect(accueil)
     return render(request, 'blog/addarticle.html', locals())
 
 def editArticle(request,id):
@@ -61,8 +62,9 @@ def editArticle(request,id):
     form = ArticleForm(request.POST or None, instance=article)
     if form.is_valid():
         form.save()
+        return redirect(accueil)
     return render(request,'blog/editArticle.html',locals())
 
 def delete(request, id):
     Article.objects.filter(id=id).delete()
-    return render(request, 'blog/delete.html',locals())
+    return redirect(accueil)
