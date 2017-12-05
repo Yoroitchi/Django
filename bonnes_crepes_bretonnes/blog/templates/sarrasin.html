@@ -1,12 +1,12 @@
-{% extends "blog/base.html"%}
+{% extends "base.html"%}
 {% block css%}<link href="/static/bootstrap/css/3-col.css" rel="stylesheet">{% endblock %}
 
-{% block title %}Les crêpes sucrées{% endblock %}
+{% block title %}Les galettes sarrasin{% endblock %}
 
 {% block content%}
 <div class="container">
   <div class="row">
-    {% for article in crepes_sucrees %}
+    {% for article in galettes_sarrasin %}
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4x">
       <div class="article">
     	   <h3>{{ article.titre }}</h3>

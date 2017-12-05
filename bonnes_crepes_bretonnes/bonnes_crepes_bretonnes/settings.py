@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+#TODO Ajouter EMAIL_BACKEND
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'si3!_f2j6zlat$6db-#r2hvy1c1na9!21m09g+bt-4unjkb9*r'
+SECRET_KEY = 'bl)w0ey=fdj5(%0t9=(0su5stm@$p33!5r(g-j$wci3_5k*xx4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -119,7 +121,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
