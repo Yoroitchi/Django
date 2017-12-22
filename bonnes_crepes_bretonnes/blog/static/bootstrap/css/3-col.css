@@ -1,0 +1,38 @@
+header {
+  margin-left: 54px;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.titre-article {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.portfolio-item {
+  margin-bottom: 50px;
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
+
+.infos{
+  margin-left: 5%;
+}
+
+footer {
+  text-align: center;
+}

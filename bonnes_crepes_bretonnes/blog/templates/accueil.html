@@ -1,0 +1,29 @@
+{% extends "base.html"%}
+
+{% block css%}<link href="/static/bootstrap/css/3-col.css" rel="stylesheet">{% endblock %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block header %}<h1>Bienvenue sur le blog des crêpes bretonnes !</h1>{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    {% for article in derniers_articles %}
+    <div class="col-md-4">
+      <div class="portfolio-item">
+        <div class="titre-article">
+    	   {{ article.titre }}
+        </div>
+    	    <p>{{ article.ingredients|truncatewords_html:10 }}</p>
+          <p>{{ article.preparation|truncatewords_html:30}}</p>
+          <p><a href="{% url 'lire' id=article.id %}">Lire la suite</a>
+      </div>
+    </div>
+    {% empty %}
+        <p>Aucun article.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
